@@ -1,0 +1,14 @@
+1) select area,street,zip_code,price from property where price<4000000 and price>2000000 and type ="sale";
+
+2) select p.area,p.street,p.zip_code from property p,features f where p.price<20000 and f.bedroom_num>1 and f.PID = p.PID and type="rent" and area ="sadasivanagar";
+
+3)select p.agent_id,sum(p.price),a.name from property p,agent a where(EXTRACT(YEAR FROM list_date)="2019" and type = "sale" and status = "closed" and p.agent_id = a.id) group by agent_id;
+
+select p.agent_id,sum(p.price),a.name from property p,agent a  where(EXTRACT(YEAR FROM list_date)="2019" and type = "sale" and status = "closed" and p.agent_id = a.id) group by agent_id limit 1;
+
+4) select p.agent_id,avg(DATEDIFF(s.deal_date,p.list_date) ),avg(p.price) from property p,sales s where(EXTRACT(YEAR FROM list_date)="2019" and  p.pid = s.pid) group by agent_id;
+
+
+5)select p.pid,p.name,p.owner_mobile,p.price,p.area,p.street,p.zip_code,p.type,f.bedroom_num,f.bath_num,f.balcony_num,p.status from property p,features f where type = "rent"  and f.PID = p.PID and status ="closed" having price = (select max(price) from property where type = "rent" and status = "closed");
+
+select p.pid,p.name,p.owner_mobile,p.price,p.area,p.street,p.zip_code,p.type,f.bedroom_num,f.bath_num,f.balcony_num,p.status from property p,features f where type = "rent"  and f.PID = p.PID and status ="open" having price = (select max(price) from property where type = "rent" and status = "open");
