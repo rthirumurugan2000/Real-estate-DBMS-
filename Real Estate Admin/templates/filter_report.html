@@ -1,0 +1,20 @@
+<html>
+     <head>
+           <title>Sales Report Agent</title>
+           <link rel="stylesheet" href="{{url_for('static',filename='style2.css')}}">
+     </head>
+     <body>
+     <h1>Input Required details</h1>
+         <form action = ' ' method = 'post'>
+             <label>ID:</label>
+             <input type = "text" name = "id" required>
+             <label>AREA:</label>
+             <input type = "text" name = "area" required>
+             <label>TYPE(RENT/SALE):</label>
+             <input type = "text" name = "type" required>
+             <label>STATUS(OPEN/CLOSED):</label>
+             <input type = "text" name = "status" required>
+             <input type = 'submit' value = 'Check report'>
+          </form>
+      </body>
+</html>
