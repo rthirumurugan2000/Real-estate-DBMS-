@@ -1,0 +1,24 @@
+<html>
+     <head>
+           <title>update sales</title>
+           <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+           <link rel="stylesheet" href="{{url_for('static',filename='style1.css')}}">
+           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+     </head>
+     <body>
+     <h1>Input Required details</h1>
+         <form action = ' ' method = 'post'>
+             <label>DEAL_NO:</label>
+             <input type = "number" name = "DEAL_NO" required>
+             <label>PID:</label>
+             <input type = "number" name = "PID" required>
+             <label>BUYER_NAME:</label>
+             <input type = "text" name = "BUYER_NAME" required>
+             <label>BUYER_MOBILE:</label>
+             <input type = "number" name = "BUYER_MOBILE" required>
+             <label>DEAL_DATE:</label>
+             <input type = "text" name = "DEAL_DATE" required>
+             <input type = 'submit' value = 'Update'>
+          </form>
+      </body>
+</html>
